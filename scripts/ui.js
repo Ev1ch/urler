@@ -72,7 +72,7 @@ export function createClose(id) {
 
   const close = createElement(
     'button',
-    { class: 'close' },
+    { class: 'close', tabindex: 0 },
     createElement('div', { class: 'cross' }),
   );
 
