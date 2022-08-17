@@ -20,11 +20,16 @@ p {
 
 input,
 button {
-  outline: none;
+  outline: 1px solid transparent;
   border: none;
   padding: var(--gutter);
   transition: var(--basic-transition);
   font-size: 1rem;
+}
+
+input:focus,
+button:focus {
+  outline-color: var(--contrast-dark-color);
 }
 
 input {
