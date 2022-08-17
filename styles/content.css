@@ -1,0 +1,10 @@
+.content {
+  margin: auto;
+  padding: calc(var(--gutter) * 2);
+  background-color: var(--contrast-light-color);
+  width: clamp(
+    var(--minimum-content-width),
+    var(--content-width),
+    var(--maximum-content-width)
+  );
+}

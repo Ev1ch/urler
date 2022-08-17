@@ -1,0 +1,98 @@
+.urls .url:not(:last-child) {
+  margin-bottom: calc(var(--gutter) * 2);
+}
+
+.url {
+  position: relative;
+}
+
+.url .close {
+  position: absolute;
+  padding: 0;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+}
+
+.url .close .cross {
+  position: relative;
+}
+
+.url .close .cross::before,
+.url .close .cross::after {
+  content: '';
+  position: absolute;
+  height: 20px;
+  width: 2px;
+  background-color: var(--contrast-dark-color);
+  left: 50%;
+  top: 50%;
+}
+
+.url .close .cross::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.url .close .cross::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.url .divider {
+  color: var(--divider-color);
+}
+
+.url .base {
+  font-size: 1.5rem;
+}
+
+.url .base .divider {
+  margin-left: calc(var(--gutter) / 4);
+  margin-right: calc(var(--gutter) / 4);
+}
+
+.url .base .protocol {
+  color: var(--protocol-color);
+}
+
+.url .base .host {
+  color: var(--host-color);
+}
+
+.url .base .port {
+  color: var(--port-color);
+}
+
+.url .base .pathname {
+  color: var(--pathname-color);
+}
+
+.url .params {
+  margin-left: 15%;
+  font-size: 1.25rem;
+}
+
+.url .param {
+  display: flex;
+  align-items: flex-start;
+}
+
+.url .param .divider {
+  margin-left: var(--gutter);
+  margin-right: var(--gutter);
+}
+
+.url .param .key {
+  display: inline-block;
+  color: var(--key-color);
+  text-align: right;
+  min-width: 200px;
+  max-width: 200px;
+  word-break: break-all;
+}
+
+.url .param .value {
+  display: inline-block;
+  color: var(--value-color);
+  text-align: left;
+}
