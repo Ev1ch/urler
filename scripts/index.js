@@ -1,4 +1,4 @@
-import { disableElement, enableElement } from './dom.js';
+import { clearElement, disableElement, enableElement } from './dom.js';
 import {
   formElement,
   inputElement,
@@ -20,6 +20,8 @@ function handleFormSubmit() {
     if (!Url.isValid(url)) {
       return;
     }
+
+    clearElement(inputElement);
 
     url = url.trim();
     const id = getId();

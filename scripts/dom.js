@@ -15,6 +15,15 @@ export function disableElement(element) {
   element.disabled = true;
 }
 
+export function clearElement(element) {
+  if (typeof element === 'string') {
+    document.querySelector(element).value = '';
+    return;
+  }
+
+  element.value = '';
+}
+
 export function enableElement(element) {
   if (typeof element === 'string') {
     document.querySelector(element).disabled = false;
