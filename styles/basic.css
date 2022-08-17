@@ -42,6 +42,7 @@ button {
 
 button:disabled {
   background-color: var(--light-color-60);
+  cursor: initial;
 }
 
 button:hover:not(:disabled) {
