@@ -1,0 +1,34 @@
+@media (min-width: 0) {
+  :root {
+    --basic-font-size: 14px;
+    --key-width: 60px;
+  }
+
+  .url .base {
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 560px) {
+  :root {
+    --basic-font-size: 16px;
+    --key-width: 80px;
+  }
+}
+
+@media (min-width: 720px) {
+  :root {
+    --basic-font-size: 18px;
+    --key-width: 100px;
+  }
+
+  .url .base {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --key-width: 200px;
+  }
+}

@@ -1,6 +1,7 @@
 @import url('./normalize.css');
 @import url('./variables.css');
 @import url('./basic.css');
+@import url('./media.css');
 
 @import url('./container.css');
 @import url('./content.css');
