@@ -48,5 +48,10 @@ function handleInputChange(event) {
   enableElement(buttonElement);
 }
 
+function handleLoad() {
+  inputElement.focus();
+}
+
 formElement.addEventListener('submit', withPreventDefault(handleFormSubmit));
 inputElement.addEventListener('keyup', handleInputChange);
+window.addEventListener('load', handleLoad);
