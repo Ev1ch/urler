@@ -1,0 +1,49 @@
+* {
+  font-family: var(--basic-font-family);
+}
+
+html {
+  font-size: var(--basic-font-size);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+  padding: var(--gutter);
+  transition: var(--basic-transition);
+  font-size: 1rem;
+}
+
+input {
+  border: 1px solid var(--light-color-80);
+}
+
+input:active {
+  border: 1px solid var(--light-color);
+}
+
+button {
+  background-color: var(--light-color-80);
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: var(--light-color-60);
+}
+
+button:hover:not(:disabled) {
+  background-color: var(--light-color);
+}
