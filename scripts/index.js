@@ -22,6 +22,7 @@ function handleFormSubmit() {
     }
 
     clearElement(inputElement);
+    disableElement(buttonElement);
 
     url = url.trim();
     const id = getId();
