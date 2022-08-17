@@ -20,32 +20,47 @@ export function createParams(params) {
   );
 }
 
-export function createBase(url) {
-  const children = [
-    createElement('span', { class: 'protocol' }, url.parsedProtocol),
-    createDivider('://'),
-    createElement('span', { class: 'host' }, url.parsedHost.base),
-  ];
+export function createHost(host) {
+  const children = [createElement('span', { class: 'host' }, host.base)];
 
-  if (url.parsedHost.port) {
+  if (host.port) {
     children.push(
       ...[
         createDivider(':'),
-        createElement('span', { class: 'port' }, url.parsedHost.port),
+        createElement('span', { class: 'port' }, host.port),
       ],
     );
   }
 
-  children.push(
-    ...[
-      createDivider('/'),
-      createElement('span', { class: 'pathname' }, url.parsedPathname),
-    ],
-  );
+  return createElement('div', {}, children);
+}
 
-  if (url.hasParams) {
+export function createProtocol(protocol) {
+  return createElement('div', {}, [
+    createElement('span', { class: 'protocol' }, protocol),
+    createDivider('://'),
+  ]);
+}
+
+export function createPathname(pathname, hasParams) {
+  const children = [
+    createDivider('/'),
+    createElement('span', { class: 'pathname' }, pathname),
+  ];
+
+  if (hasParams) {
     children.push(createDivider('?'));
   }
+
+  return createElement('div', {}, children);
+}
+
+export function createBase(url) {
+  const children = [
+    createProtocol(url.parsedProtocol),
+    createHost(url.parsedHost),
+    createPathname(url.parsedPathname, url.hasParams),
+  ];
 
   return createElement('div', { class: 'base' }, children);
 }
