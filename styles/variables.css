@@ -1,0 +1,27 @@
+:root {
+  --gutter: 10px;
+  --radius: 10px;
+
+  --background-color: #b5c7cc;
+  --contrast-light-color: #fff;
+  --contrast-dark-color: #000;
+  --light-color: rgb(204, 204, 204);
+  --light-color-80: rgba(204, 204, 204, 0.8);
+  --light-color-60: rgba(204, 204, 204, 0.6);
+  --divider-color: #8ba1ad;
+  --protocol-color: #587b89;
+  --host-color: #244c66;
+  --port-color: #2a4c60;
+  --pathname-color: #1e303b;
+  --key-color: #407d6c;
+  --value-color: #7db290;
+
+  --basic-font-family: sans-serif;
+  --basic-font-size: 18px;
+
+  --basic-transition: 0.3s;
+
+  --minimum-content-width: 320px;
+  --content-width: 80%;
+  --maximum-content-width: 1000px;
+}
