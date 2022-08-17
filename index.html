@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>URLs</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <script src="./scripts/index.js" type="module"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="content">
+        <div class="description">
+          <h1 class="title">Enter your URL!</h1>
+          <p class="text">
+            It is just a helpful tool to parse URLs into human-readable format.
+          </p>
+        </div>
+
+        <form class="form">
+          <input
+            class="input"
+            type="text"
+            placeholder="URL"
+            name="url"
+            value=""
+          />
+          <button class="button" type="submit" disabled>Parse</button>
+        </form>
+
+        <div class="urls"></div>
+      </div>
+    </div>
+  </body>
+</html>
