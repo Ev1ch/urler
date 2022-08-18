@@ -1,4 +1,9 @@
-import { clearElement, disableElement, enableElement } from './dom.js';
+import {
+  clearElement,
+  disableElement,
+  enableElement,
+  focusElement,
+} from './dom.js';
 import {
   formElement,
   inputElement,
@@ -49,7 +54,7 @@ function handleInputChange(event) {
 }
 
 function handleLoad() {
-  inputElement.focus();
+  focusElement(inputElement);
 }
 
 formElement.addEventListener('submit', withPreventDefault(handleFormSubmit));

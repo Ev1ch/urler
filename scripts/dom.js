@@ -6,6 +6,15 @@ export function isElement(child) {
   return child instanceof Node || child instanceof HTMLElement;
 }
 
+export function focusElement(element) {
+  if (typeof element === 'string') {
+    document.querySelector(element).focus();
+    return;
+  }
+
+  element.focus();
+}
+
 export function disableElement(element) {
   if (typeof element === 'string') {
     document.querySelector(element).disabled = true;
