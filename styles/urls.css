@@ -4,6 +4,13 @@
 
 .url {
   position: relative;
+  padding-top: var(--gutter);
+  padding-bottom: var(--gutter);
+  outline: 1px solid transparent;
+}
+
+.url:focus {
+  outline-color: var(--contrast-dark-color);
 }
 
 .url .close {
