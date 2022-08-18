@@ -1,4 +1,4 @@
-import { createElement } from './dom.js';
+import { createElement, deleteElement, focusElement } from './dom.js';
 
 export function createDivider(divider) {
   return createElement('span', { class: 'divider' }, divider);
@@ -67,18 +67,18 @@ export function createBase(url) {
 
 export function createClose(id) {
   function handleClick() {
-    document.querySelector(`[data-id="${id}"]`).remove();
+    deleteElement(`[data-id="${id}"]`);
   }
 
-  const close = createElement(
+  const closeElement = createElement(
     'button',
     { class: 'close', tabindex: 0 },
     createElement('div', { class: 'cross' }),
   );
 
-  close.addEventListener('click', handleClick);
+  closeElement.addEventListener('click', handleClick);
 
-  return close;
+  return closeElement;
 }
 
 export function createUrl(url, id) {
@@ -88,5 +88,25 @@ export function createUrl(url, id) {
     children.push(createParams(url.parsedParams));
   }
 
-  return createElement('div', { class: 'url', 'data-id': id }, children);
+  const urlElement = createElement(
+    'div',
+    { class: 'url', 'data-id': id, tabindex: 0 },
+    children,
+  );
+
+  function handleDelete(event) {
+    if (event.keyCode !== 8 && event.keyCode !== 46) {
+      return;
+    }
+
+    if (document.activeElement !== urlElement) {
+      return;
+    }
+
+    deleteElement(urlElement);
+  }
+
+  urlElement.addEventListener('keyup', handleDelete);
+
+  return urlElement;
 }
